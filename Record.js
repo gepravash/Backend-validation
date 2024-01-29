@@ -14,11 +14,13 @@ mongoose.connect(process.env.MONGODB_URL)
 const recordSchema = new mongoose.Schema({
     name: {
         type: String,
+        required: true,
         unique: true,
         minLength: [3, "Too few words for name. It should be atleast greater than or equal to 3 words."]
         },
     number: {
         type: String,
+        required: true,
         unique: true,
         minLength: [9, "A phone number must have length of 8 or more"],
         validate: {
