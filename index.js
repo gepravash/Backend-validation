@@ -14,6 +14,7 @@ const requestLogger = (request, response, next) => {
 const requestBodyTrimmer = (request, response, next) => {
     request.body.name = request.body.name.trim()
     request.body.number = request.body.number.trim()
+    request.body.important =  request.body.important || false
     next() 
 }
 
